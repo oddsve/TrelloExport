@@ -1,0 +1,66 @@
+body {
+    width: 900px;
+    margin: 15px;
+}
+.dato {
+    text-transform: lowercase;
+}
+
+h2 {
+    clear: both;
+    border-bottom: solid 1px;
+    margin-bottom: -10px;
+    padding-top: 25px;
+}
+h3 {
+    float: left;
+    clear: both;
+}
+
+.frist {
+    font-weight: bold;
+    float: right;
+    margin-top: 25px;
+    margin-bottom: 0;
+}
+
+.beskrivelse {
+    clear: both;
+    width: 750px;
+    float: left;
+}
+
+.trello-label {
+    width: 6em;
+    text-align: center;
+    margin: 0 4px;
+    border-radius: 1em;
+    font-weight: bold;
+    float: right;
+
+}
+
+.footer {
+    clear: both;
+    font-style: italic;
+    font-size: .7em;
+    padding-top: 2em;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.green {
+    background-color: green;
+    color: #f5f5f5;
+}
+
+.yellow {
+    background-color: #ffff00;
+}
+
+.red {
+    background-color: red;
+    color: #f5f5f5;
+}
