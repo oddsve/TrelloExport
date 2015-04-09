@@ -37,6 +37,6 @@ $("#get-board").click(function(){
   Trello.authorize({name: "TrelloExport", type: "popup", success: onAutorize, error: onError, account:true  })
 });
 
-$("#logout").click(function(){
+$("#log-out").click(function(){
   Trello.deauthorize();
 });
