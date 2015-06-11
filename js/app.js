@@ -2,7 +2,7 @@ var onAutorize = function() {
   Trello.rest("GET","boards/532169c1348424717a6298f5/lists/", function(lister){
 
     $.each(lister, function(indx, liste){
-
+      if (liste.name === "Muligheter") return;
 
       $("#lister").append("<h2 id='h"+ liste.id +"'>"+ liste.name +"</h2><div id='" + liste.id + "'></div>");
       $("#h" + liste.id).addClass("hidden");
@@ -10,6 +10,12 @@ var onAutorize = function() {
       Trello.rest("GET","lists/" + liste.id + "/cards", function(cards){
 
         $.each( cards, function(indx, card){
+          if (card.labels.some(function (item) { return item.name === "Konfidensielt"; })) return;
+
+          if (!card.desc) {
+            alert(card.name + " mangler beskrivelse");
+          }
+
           $("#h" + liste.id).removeClass("hidden");
           $("#"+liste.id).append("<h3>" + card.name + "</h3>");
           if (card.due != null ) {
@@ -20,8 +26,6 @@ var onAutorize = function() {
           $.each( card.labels , function (indx, label){
             $("#"+liste.id).append("<p class='trello-label " + label.color + "'>" + label.name + "</p>")
           });
-
-
         });
       });
     });
